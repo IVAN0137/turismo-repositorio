@@ -1,0 +1,181 @@
+/* General */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    background: linear-gradient(135deg, #6a0dad, #a40077, #4a00e0, #8e2de2);
+    background-size: 200% 200%;
+    animation: gradientAnimation 15s ease infinite;
+    overflow: hidden; /* Ensure no scrollbar appears */
+}
+
+/* Keyframes for background animation */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+/* Header */
+header {
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly opaque background for readability */
+    color: #333;
+    padding: 20px 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    border-bottom: 5px solid #ff6f61;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ensure header is above other elements */
+}
+
+header .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+    color: #333;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+nav ul li a img {
+    vertical-align: middle;
+    transition: transform 0.3s ease;
+}
+
+nav ul li a img:hover {
+    transform: scale(1.1);
+}
+
+/* Map Container */
+#map-container {
+    display: flex;
+    height: calc(100vh - 80px); /* Adjust based on header height */
+    margin-top: 80px; /* Adjust for header height */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Map */
+#map {
+    flex: 3;
+    height: 100%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    border-radius: 50px;
+    transition: transform 0.5s ease;
+    margin-top: 10%;
+}
+
+#map:hover {
+    transform: scale(1.03);
+}
+
+/* Sidebar */
+#sidebar {
+    flex: 1;
+    padding: 20px;
+    background-color: #ffffff;
+    border-left: 2px solid #ff6f61;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    overflow-y: auto;
+    transition: background-color 0.3s ease;
+    margin-top: 10%; /* Adjust this value to position it 20% from the top of its container */
+}
+
+#sidebar:hover {
+    background-color: #f8f9fa;
+}
+
+#sidebar h2 {
+    margin-top: 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: #ff6f61;
+}
+
+#sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#sidebar ul li {
+    margin-bottom: 15px;
+    font-size: 16px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+#sidebar ul li:hover {
+    background-color: #f0f0f0;
+    transform: translateX(10px);
+}
+
+#sidebar ul li a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#sidebar ul li a:hover {
+    color: #0056b3;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    body {
+        transform: rotate(-90deg);
+        transform-origin: left top;
+        width: 100vh;
+        height: 100vw;
+        overflow-x: hidden;
+        position: absolute;
+        top: 100%;
+        left: 0;
+    }
+
+    #map-container {
+        flex-direction: column;
+        height: 100vh;
+        margin-top: 0;
+    }
+
+    #map {
+        width: 100%;
+        height: 80%;
+        border-radius: 0;
+    }
+
+    #sidebar {
+        width: 100%;
+        height: 20vh;
+        border-left: none;
+        border-top: 2px solid #ff6f61;
+        border-radius: 0;
+    }
+}

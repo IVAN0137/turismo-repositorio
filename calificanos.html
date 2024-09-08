@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/calificanos.css">
+    <title>Calificación de la Experiencia</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Califica tu Experiencia</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html"><img src="res/botones/hogar.png" alt="Inicio" width="30px" height="30px"></a></li>
+                    <li><a href="mapa.html"><img src="res/botones/marcador.png" alt="Destinos" width="30px" height="30px"></a></li>
+                    <li><a href="usuarios.html"><img src="res/botones/llamada-telefonica.png" alt="Contáctanos" width="30px" height="30px"></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <h2>Califica tu Experiencia</h2>
+    <form id="ratingForm" action="guardar_comentario.php" method="post">
+        <div class="rating">
+            <input type="radio" id="star5" name="rating" value="5"><label for="star5">😄</label>
+            <input type="radio" id="star4" name="rating" value="4"><label for="star4">😊</label>
+            <input type="radio" id="star3" name="rating" value="3"><label for="star3">😐</label>
+            <input type="radio" id="star2" name="rating" value="2"><label for="star2">😟</label>
+            <input type="radio" id="star1" name="rating" value="1"><label for="star1">😢</label>
+        </div>
+        <div class="comments">
+            <h2>Comentarios</h2>
+            <textarea name="comentario" placeholder="Deja tus comentarios aquí..."></textarea>
+        </div>
+        <button class="submit-btn" type="submit">Enviar</button>
+    </form>
+
+    <h2>Comentarios Recientes</h2>
+    <div id="comentarios">
+        <?php
+        include 'mostrar_comentarios.php';
+        ?>
+    </div>
+
+    <script src="js/calificanos.js"></script>
+</body>
+</html>

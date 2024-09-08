@@ -1,0 +1,143 @@
+/* Reseteo de márgenes y rellenos para todos los elementos */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos del cuerpo de la página */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    overflow: hidden; /* Evita scrollbars por el fondo animado */
+    display: flex; /* Utiliza flexbox para centrar el contenido */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    height: 100vh; /* Ocupa toda la altura de la ventana */
+}
+
+/* Sección de fondo animado */
+section {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background: #3586ff;
+    overflow: hidden;
+}
+
+/* Elementos de olas animadas */
+section .air {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url(https://1.bp.blogspot.com/-xQUc-TovqDk/XdxogmMqIRI/AAAAAAAACvI/AizpnE509UMGBcTiLJ58BC6iViPYGYQfQCLcBGAsYHQ/s1600/wave.png);
+    background-size: 1000px 100px;
+}
+
+/* Animaciones de olas */
+section .air.air1 {
+    animation: wave 30s linear infinite;
+    z-index: 1000;
+    opacity: 1;
+    animation-delay: 0s;
+    bottom: 0;
+}
+
+section .air.air2 {
+    animation: wave2 15s linear infinite;
+    z-index: 999;
+    opacity: 0.5;
+    animation-delay: -5s;
+    bottom: 10px;
+}
+
+section .air.air3 {
+    animation: wave 30s linear infinite;
+    z-index: 998;
+    opacity: 0.2;
+    animation-delay: -2s;
+    bottom: 15px;
+}
+
+section .air.air4 {
+    animation: wave2 5s linear infinite;
+    z-index: 997;
+    opacity: 0.7;
+    animation-delay: -5s;
+    bottom: 20px;
+}
+
+/* Definición de animación de ola hacia la derecha */
+@keyframes wave {
+    0% {
+        background-position-x: 0px; 
+    }
+    100% {
+        background-position-x: 1000px; 
+    }
+}
+
+/* Definición de animación de ola hacia la izquierda */
+@keyframes wave2 {
+    0% {
+        background-position-x: 0px; 
+    }
+    100% {
+        background-position-x: -1000px; 
+    }
+}
+
+/* Contenedor de inicio de sesión */
+.login-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+    position: relative; /* Asegura que el contenedor esté en primer plano */
+    z-index: 1001; /* Asegura que el contenedor esté sobre el fondo animado */
+}
+
+/* Título del contenedor de inicio de sesión */
+h2 {
+    margin-bottom: 20px;
+}
+
+/* Estilos de grupo de formulario */
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+/* Etiquetas dentro del formulario */
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Campos de entrada del formulario */
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Botón de envío */
+button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #5cb85c;
+    color: white;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Efecto hover para el botón */
+button:hover {
+    background-color: #4cae4c;
+}
