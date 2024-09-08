@@ -1,0 +1,49 @@
+input[type="text"] {
+    padding: 10px;
+    width: 80%;
+    margin: 10px 0;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.weather-container {
+    flex: 1; /* Esto asegura que el contenido principal crezca y ocupe el espacio disponible */
+    text-align: center;
+}
+
+footer {
+    background-color: #333; /* Color de fondo del footer */
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    width: 100%;
+}
+
+footer a {
+    color: #FFC107; /* Color del enlace */
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pronóstico del Clima en Tiempo Real</title>
+    <link rel="stylesheet" href="css/pronostico.css"> <!-- Vinculamos el archivo CSS -->
+</head>
+<body>
+    <div class="weather-container">
+        <h1>Pronóstico del Clima</h1>
+        <div class="weather-info" id="weather-info">Cargando...</div>
+
+        <!-- Campo de búsqueda para consultar otra ciudad -->
+        <input type="text" id="city-input" placeholder="Buscar por ciudad" />
+        <button onclick="getWeatherByCity()">Buscar Ciudad</button>
+        <br><br>
+
+        <!-- Botón para obtener el clima usando la geolocalización -->
+        <button onclick="getWeatherByLocation()">Usar mi ubicación actual</button>
+    </div>
+
+    <!-- Footer con el widget de OneWeather -->
+    <footer>
+        <div id="widget-container">
+            <!-- El widget se actualizará aquí -->
+        </div>
+    </footer>
+
+    <script src="js/pronostico.js"></script> <!-- Vinculamos el archivo JavaScript -->
+</body>
+</html>
