@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pronóstico del Clima en Tiempo Real</title>
-    <link rel="stylesheet" href="css/pronostico.css"> <!-- Vinculamos el archivo CSS -->
+    <link rel="stylesheet" href="css/pronostico.css">
 </head>
 <body>
     <div class="weather-container">
         <h1>Pronóstico del Clima</h1>
         <div class="weather-info" id="weather-info">Cargando...</div>
 
-        <!-- Campo de búsqueda para consultar otra ciudad -->
+        <!-- Campo de búsqueda con autocompletado -->
         <input type="text" id="city-input" placeholder="Buscar por ciudad" />
-        <button onclick="getWeatherByCity()">Buscar Ciudad</button>
+        <ul id="suggestions-list" class="suggestions-list"></ul>
         <br><br>
 
         <!-- Botón para obtener el clima usando la geolocalización -->
@@ -27,6 +27,6 @@
         </div>
     </footer>
 
-    <script src="js/pronostico.js"></script> <!-- Vinculamos el archivo JavaScript -->
+    <script src="js/pronostico.js"></script>
 </body>
 </html>

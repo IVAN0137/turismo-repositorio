@@ -1,49 +1,62 @@
-input[type="text"] {
-    padding: 10px;
-    width: 80%;
-    margin: 10px 0;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-}
+/* pronostico.css */
 
-button {
-    padding: 10px 20px;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-html, body {
-    height: 100%;
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
-    display: flex;
-    flex-direction: column;
+    padding: 0;
+    transition: background-color 0.5s, background-image 0.5s;
+}
+
+/* Fondo predeterminado */
+.default-background {
+    background-color: #f0f8ff; /* Color de fondo claro */
+}
+
+/* Fondo para lluvia */
+.rainy-background {
+    background-color: #a1c4fd;
+    background-image: url('https://example.com/rainy-background.gif'); /* Cambia la URL a tu animación de lluvia */
+    background-size: cover;
+}
+
+/* Fondo para otras condiciones */
+.sunny-background {
+    background-color: #ffeb3b;
+}
+
+.cloudy-background {
+    background-color: #9e9e9e;
 }
 
 .weather-container {
-    flex: 1; /* Esto asegura que el contenido principal crezca y ocupe el espacio disponible */
+    padding: 20px;
     text-align: center;
 }
 
-footer {
-    background-color: #333; /* Color de fondo del footer */
-    color: white;
-    text-align: center;
-    padding: 10px;
-    position: relative;
-    width: 100%;
+.weather-info {
+    font-size: 1.2em;
+    margin: 20px 0;
 }
 
-footer a {
-    color: #FFC107; /* Color del enlace */
-    text-decoration: none;
+/* Estilo de lista de sugerencias */
+.suggestions-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #ccc;
+    background-color: white;
+    max-height: 150px;
+    overflow-y: auto;
+    position: absolute;
+    width: calc(100% - 22px); /* Ajusta el ancho según el padding del input */
+    z-index: 1000;
 }
 
-footer a:hover {
-    text-decoration: underline;
+.suggestions-list li {
+    padding: 8px;
+    cursor: pointer;
+}
+
+.suggestions-list li:hover {
+    background-color: #ddd;
 }
