@@ -1,62 +1,147 @@
-/* pronostico.css */
+/* styles.css */
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
     transition: background-color 0.5s, background-image 0.5s;
+    color: #333;
 }
 
-/* Fondo predeterminado */
-.default-background {
-    background-color: #f0f8ff; /* Color de fondo claro */
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-/* Fondo para lluvia */
-.rainy-background {
-    background-color: #a1c4fd;
-    background-image: url('https://example.com/rainy-background.gif'); /* Cambia la URL a tu animación de lluvia */
-    background-size: cover;
-}
-
-/* Fondo para otras condiciones */
-.sunny-background {
-    background-color: #ffeb3b;
-}
-
-.cloudy-background {
-    background-color: #9e9e9e;
-}
-
-.weather-container {
+header {
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
     padding: 20px;
     text-align: center;
 }
 
-.weather-info {
-    font-size: 1.2em;
-    margin: 20px 0;
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
 }
 
-/* Estilo de lista de sugerencias */
+.weather-container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    width: 100%;
+}
+
+.weather-info {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.search-container {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+#city-input {
+    width: calc(100% - 120px);
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: #007BFF;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.location-button {
+    background-color: #28a745;
+}
+
+.location-button:hover {
+    background-color: #218838;
+}
+
 .suggestions-list {
     list-style: none;
     padding: 0;
     margin: 0;
-    border: 1px solid #ccc;
+    border: 1px solid #ddd;
     background-color: white;
     max-height: 150px;
     overflow-y: auto;
     position: absolute;
-    width: calc(100% - 22px); /* Ajusta el ancho según el padding del input */
+    width: calc(100% - 22px);
     z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .suggestions-list li {
-    padding: 8px;
+    padding: 10px;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 .suggestions-list li:hover {
-    background-color: #ddd;
+    background-color: #f1f1f1;
+}
+
+/* Fondo predeterminado */
+.default-background {
+    background-color: #f0f8ff;
+}
+
+/* Fondo animado para lluvia */
+.rainy-background {
+    background-color: #a1c4fd;
+}
+
+/* Fondo animado para condiciones soleadas */
+.sunny-background {
+    background-color: #ffeb3b;
+}
+
+/* Fondo animado para condiciones nubladas */
+.cloudy-background {
+    background-color: #9e9e9e;
+}
+
+/* Estilos para el pie de página */
+footer {
+    padding: 20px;
+    text-align: center;
+    background-color: #f1f1f1;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Contenedor para el iframe del GIF */
+#giphy-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#giphy-container iframe {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 100%;
+    height: auto;
 }

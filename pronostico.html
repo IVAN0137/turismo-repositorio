@@ -6,26 +6,38 @@
     <title>Pronóstico del Clima en Tiempo Real</title>
     <link rel="stylesheet" href="css/pronostico.css">
 </head>
-<body>
-    <div class="weather-container">
-        <h1>Pronóstico del Clima</h1>
-        <div class="weather-info" id="weather-info">Cargando...</div>
+<body class="default-background">
+    <div class="container">
+        <header>
+            <h1>Pronóstico del Clima</h1>
+        </header>
 
-        <!-- Campo de búsqueda con autocompletado -->
-        <input type="text" id="city-input" placeholder="Buscar por ciudad" />
-        <ul id="suggestions-list" class="suggestions-list"></ul>
-        <br><br>
+        <section class="weather-section">
+            <div id="weather-info" class="weather-info">Cargando...</div>
 
-        <!-- Botón para obtener el clima usando la geolocalización -->
-        <button onclick="getWeatherByLocation()">Usar mi ubicación actual</button>
+            <!-- Campo de búsqueda con autocompletado -->
+            <div class="search-container">
+                <input type="text" id="city-input" placeholder="Buscar por ciudad" />
+                <button class="search-button" onclick="getWeatherByCity(document.getElementById('city-input').value)">Buscar</button>
+                <ul id="suggestions-list" class="suggestions-list"></ul>
+            </div>
+
+            <!-- Botón para obtener el clima usando la geolocalización -->
+            <button class="geo-button" onclick="getWeatherByLocation()">Usar mi ubicación actual</button>
+        </section>
+
+        <!-- Contenedor para el GIF animado -->
+        <section id="giphy-container" class="giphy-container">
+            <!-- El iframe con la animación se actualizará aquí según el clima -->
+        </section>
+
+        <!-- Footer con el widget de OneWeather -->
+        <footer>
+            <div id="widget-container">
+                <!-- El widget se actualizará aquí -->
+            </div>
+        </footer>
     </div>
-
-    <!-- Footer con el widget de OneWeather -->
-    <footer>
-        <div id="widget-container">
-            <!-- El widget se actualizará aquí -->
-        </div>
-    </footer>
 
     <script src="js/pronostico.js"></script>
 </body>

@@ -8,41 +8,40 @@ async function getWeatherByCity(city) {
         if (response.ok) {
             displayWeather(data);
             updateWeatherWidget(city);
-            updateBackground(data.weather[0].main);
+            updateBackground(data.weather[0].description); // Actualiza el fondo según la descripción del clima
         } else {
             document.getElementById('weather-info').innerHTML = `Error: ${data.message}`;
         }
     } catch (error) {
         document.getElementById('weather-info').innerHTML = 'Error al obtener el clima.';
-        console.error('Error en getWeatherByCity:', error);
     }
 }
 
-function updateBackground(weatherCondition) {
+function updateBackground(weatherDescription) {
     const body = document.body;
-    
+
     // Elimina clases de fondo existentes
     body.classList.remove('default-background', 'rainy-background', 'sunny-background', 'cloudy-background');
-    
-    // Agrega clase según la condición del clima
-    switch (weatherCondition.toLowerCase()) {
-        case 'rain':
-        case 'shower rain':
-        case 'light rain':
-        case 'moderate rain':
-        case 'heavy rain':
-        case 'very heavy rain':
-        case 'extreme rain':
+
+    // Agrega clase según la descripción del clima
+    switch (weatherDescription.toLowerCase()) {
+        case 'lluvia':
+        case 'lluvia ligera':
+        case 'lluvia moderada':
+        case 'tormenta':
             body.classList.add('rainy-background');
             break;
-        case 'clear sky':
+
+        case 'cielo despejado':
             body.classList.add('sunny-background');
             break;
-        case 'few clouds':
-        case 'scattered clouds':
-        case 'broken clouds':
+
+        case 'pocas nubes':
+        case 'nubes dispersas':
+        case 'nubes rotas':
             body.classList.add('cloudy-background');
             break;
+
         default:
             body.classList.add('default-background');
     }
@@ -61,17 +60,16 @@ async function getWeatherByLocation() {
                     const city = data.name;
                     displayWeather(data);
                     updateWeatherWidget(city);
-                    updateBackground(data.weather[0].main);
+                    updateBackground(data.weather[0].description); // Actualiza el fondo según la descripción del clima
                 } else {
                     document.getElementById('weather-info').innerHTML = `Error: ${data.message}`;
                 }
             } catch (error) {
                 document.getElementById('weather-info').innerHTML = 'Error al obtener el clima.';
-                console.error('Error en getWeatherByLocation:', error);
             }
         }, (error) => {
             document.getElementById('weather-info').innerHTML = 'No se pudo obtener su ubicación.';
-            console.error('Error de geolocalización:', error);
+            console.error(error);
         }, {
             enableHighAccuracy: true,
             timeout: 5000,
@@ -120,9 +118,8 @@ async function initAutocomplete() {
             const response = await fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${query}&limit=5`);
             const results = await response.json();
 
-            // Limpiar lista de sugerencias antes de agregar nuevas
-            suggestionsList.innerHTML = results.map(result => 
-                `<li data-name="${result.display_name}">${result.display_name}</li>`
+            suggestionsList.innerHTML = results.map((result, index) => 
+                `<li data-index="${index}" data-name="${result.display_name}">${result.display_name}</li>`
             ).join('');
         } catch (error) {
             console.error('Error al obtener las sugerencias:', error);
@@ -132,15 +129,16 @@ async function initAutocomplete() {
     suggestionsList.addEventListener('click', function(event) {
         if (event.target.tagName === 'LI') {
             const selectedCity = event.target.getAttribute('data-name');
-            document.getElementById('city-input').value = selectedCity;
+            input.value = selectedCity;
             getWeatherByCity(selectedCity);
             suggestionsList.innerHTML = ''; // Limpiar sugerencias después de la selección
         }
     });
 }
 
-// Inicializa la página
+// Llama a la función por defecto al cargar la página para usar la ubicación del usuario
 window.onload = function() {
     getWeatherByLocation();
-    initAutocomplete();
+    initAutocomplete(); // Iniciamos el autocompletado cuando la página se carga
 };
+        
