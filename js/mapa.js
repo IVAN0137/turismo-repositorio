@@ -31,6 +31,7 @@ var markers = [
     { coords: [21.037164, -99.614668], name: 'EX CONVENTO BUCARELI', popup: '<a href="pinal.html"><b>EX CONVENTO BUCARELI</b><br><img src="res/" alt="Ex Convento Bucareli" width="150" height="100"></a>' },
     { coords: [21.134362, -99.626095], name: 'MONUMENTO HACIA LOS MINEROS', popup: '<a href="pinal.html"><b>MONUMENTO HACIA LOS MINEROS</b><br><img src="res/" alt="Monumento Hacia Los Mineros" width="150" height="100"></a>' },
     { coords: [21.134545, -99.624812], name: 'CENTRO COMUNITARIO', popup: '<a href="pinal.html"><b>CENTRO COMUNITARIO</b><br><img src="res/" alt="Centro comunitario" width="150" height="100"></a>' },
+    { coords: [], name:'CASA DEL ESTUDIANTE PEÑAMILLER', popup: '<a href="pinal.html"><b>CASA DEL ESTUDIANTE PEÑAMILLER</b><br><>img src="" alt="casa del estudiante pinal de amoles" width="150" height="100"><a/>'},
     // Jalpan de Serra     
     { coords: [21.217321, -99.473034], name: 'JALPAN DE SERRA', popup: '<a href="pinal.html"><b>JALPAN DE SERRA</b><br><img src="res/" alt="Jalpan De serra" width="150" height="100"></a>' },
     { coords: [21.216758, -99.473858], name: 'MISIÓN DE SANTIANGO', popup: '<a href="jalpan.html"><b>MISIÓN DE SANTIAGO</b><br><img src="res/" alt="Jalpan" width="150" height="100"></a>' },
